@@ -3,9 +3,10 @@
 
 Script template based on https://github.com/pocc/pre-commit-hooks/
 """
-from hooks.utils import StaticAnalyzerCmd
-from typing import List
 import sys
+from typing import List
+
+from hooks.utils import StaticAnalyzerCmd
 
 
 class ArduinoLint(StaticAnalyzerCmd):
@@ -19,7 +20,8 @@ class ArduinoLint(StaticAnalyzerCmd):
         self.parse_args(args)
 
     def run(self):
-        """Run arduino-lint"""
+        """Run arduino-lint."""
+        print(self.files)
         for filename in self.files:
             self.run_command(self.args + [filename])
             self.exit_on_error()
