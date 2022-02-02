@@ -3,6 +3,6 @@
 - id: arduino-lint
   name: Arduino Lint
   description: Checks arduino projects for issues and conventions.
-  entry: arduino-lint
+  entry: arduino-lint-hook
   language: python
   types: [ino]  # requires identify >= 2.4.3

@@ -14,7 +14,9 @@ This project uses the Command class from poccs [clinters](https://github.com/poc
 
 ## Getting Started
 
-To add this hook into your pre-commit config:
+To configure pre-commit see [pre-commit](https://github.com/pre-commit/pre-commit) for instructions
+
+Sample `.pre-commit-config.yaml`:
 
 ```yaml
 -   repo: https://github.com/creatingnull/pre-commit-arduino
