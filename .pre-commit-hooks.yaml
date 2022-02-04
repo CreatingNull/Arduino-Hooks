@@ -6,3 +6,4 @@
   entry: arduino-lint-hook
   language: python
   types: [ino]  # requires identify >= 2.4.3
+  pass_filenames: false
