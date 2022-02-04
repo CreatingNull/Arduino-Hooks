@@ -6,7 +6,7 @@ Script template based on https://github.com/pocc/pre-commit-hooks/
 import sys
 from typing import List
 
-from hooks.utils import StaticAnalyzerCmd
+from pre_commit_pycli.cli import StaticAnalyzerCmd
 
 
 class ArduinoLint(StaticAnalyzerCmd):
@@ -16,7 +16,12 @@ class ArduinoLint(StaticAnalyzerCmd):
     lookbehind = "arduino-lint "
 
     def __init__(self, args: List[str]):
-        super().__init__(self.command, self.lookbehind, args)
+        super().__init__(
+            self.command,
+            self.lookbehind,
+            args,
+            help_url="https://github.com/CreatingNull/Pre-Commit-Arduino"
+        )
         self.parse_args(args)
 
     def run(self):

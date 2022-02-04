@@ -16,6 +16,10 @@ docs/_build/
 docs/_static/
 docs/_templates/
 
+# Ignore built / packaged code
+dist/
+*.egg-info
+
 # Ignore dev virtual enviroment
 .env
 .venv
