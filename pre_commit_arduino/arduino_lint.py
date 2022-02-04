@@ -26,10 +26,9 @@ class ArduinoLint(StaticAnalyzerCmd):
 
     def run(self):
         """Run arduino-lint."""
-        print(self.files)
-        for filename in self.files:
-            self.run_command(self.args + [filename])
-            self.exit_on_error()
+        self.check_installed()
+        self.run_command(self.args)
+        self.exit_on_error()
 
 
 def main(argv=None):
