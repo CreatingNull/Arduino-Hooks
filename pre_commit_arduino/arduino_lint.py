@@ -18,23 +18,17 @@ class ArduinoLint(StaticAnalyzerCmd):
     def __init__(self, args: List[str]):
         super().__init__(
             self.command,
-            self.lookbehind,
             args,
             help_url="https://github.com/CreatingNull/Pre-Commit-Arduino"
         )
-        self.parse_args(args)
 
     def run(self):
         """Run arduino-lint."""
-        self.check_installed()
-        self.run_command(self.args)
-        self.exit_on_error()
+        self.run_command()
 
 
 def main(argv=None):
-    if argv is None:
-        argv = sys.argv
-    cmd = ArduinoLint(argv)
+    cmd = ArduinoLint(sys.argv if argv is None else argv)
     cmd.run()
 
 

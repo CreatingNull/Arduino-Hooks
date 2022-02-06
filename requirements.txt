@@ -1,1 +1,1 @@
-pre-commit-pycli==0.1.2
+pre-commit-pycli==0.2.0
