@@ -4,11 +4,11 @@
 Script template based on https://github.com/pocc/pre-commit-hooks/
 """
 import sys
-from typing import List
 from argparse import ArgumentParser
+from pathlib import Path
+from typing import List
 
 from pre_commit_pycli.cli import StaticAnalyzerCmd
-from pathlib import Path
 
 
 class ArduinoLint(StaticAnalyzerCmd):
@@ -27,17 +27,17 @@ class ArduinoLint(StaticAnalyzerCmd):
         super().__init__(
             self.command,
             cli_args,
-            help_url="https://github.com/CreatingNull/Pre-Commit-Arduino"
+            help_url="https://github.com/CreatingNull/Pre-Commit-Arduino",
         )
 
     def run(self):
         """Run arduino-lint."""
         self.run_command()
         if self.fail_on_warn and " 0 WARNINGS" not in str(self.stdout):
-            print(str(self.stdout, encoding='UTF-8'))
+            print(str(self.stdout, encoding="UTF-8"))
             self.raise_error(
                 "Failed due to arduino-lint warnings.",
-                "If this behaviour was not expected remove the '--fail-on-warn' flag."
+                "If this behaviour was not expected remove the '--fail-on-warn' flag.",
             )
 
 

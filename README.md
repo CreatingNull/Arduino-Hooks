@@ -1,14 +1,20 @@
 # ![NullTek Documentation](https://raw.githubusercontent.com/CreatingNull/NullTek-Assets/main/img/logo/NullTekDocumentationLogo.png) Pre-Commit Arduino Hooks
 
-[![License](https://img.shields.io/:license-mit-blue.svg?style=flat-square)](LICENSE.md)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pre-commit-arduino?style=flat-square&logo=python&logoColor=white)](https://pypi.org/project/pre-commit-arduino/)
+[![PyPI](https://img.shields.io/pypi/v/pre-commit-arduino?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/pre-commit-arduino/)
+[![Tests](https://img.shields.io/github/workflow/status/CreatingNull/pre-commit-arduino/pre-commit?logo=pre-commit&style=flat-square&label=format)](https://github.com/CreatingNull/pre-commit-arduino/actions/workflows/run-pre-commit.yaml)
+[![Format](https://img.shields.io/github/workflow/status/CreatingNull/pre-commit-arduino/tests?logo=GitHub&style=flat-square&label=tests)](https://github.com/CreatingNull/pre-commit-arduino/actions/workflows/run-tests.yaml)
+[![License](https://img.shields.io/github/license/CreatingNull/pre-commit-arduino?style=flat-square)](https://github.com/CreatingNull/Pre-Commit-Arduino/blob/master/LICENSE.md)
+[![Code Style](https://img.shields.io/badge/style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
 
-This project provides [pre-commit](https://github.com/pre-commit/pre-commit) hooks for [official arduino](https://github.com/arduino) command line tooling.
+
+This project provides [pre-commit](https://github.com/pre-commit/pre-commit) hooks for [arduino](https://github.com/arduino) command line tooling.
 
 Currently, this includes:
 
-* [arduino-lint](https://github.com/arduino/arduino-lint) - Linter for checking arduino projects for problems and conventions.
+* [arduino-lint](https://github.com/arduino/arduino-lint) - Linter for checking arduino projects for problems and conformance to conventions.
 
-This project uses the pre-commit-pycli [clinters](https://github.com/CreatingNull/Pre-Commit-PyCLI), to handle most of the cross-platform, sub-process nastiness.
+This project uses [pre-commit-pycli](https://github.com/CreatingNull/Pre-Commit-PyCLI), to handle most of the cross-platform, sub-process nastiness.
 
 ---
 
@@ -19,7 +25,7 @@ To configure pre-commit see [pre-commit](https://github.com/pre-commit/pre-commi
 This project requires the `.ino` extension is comprehended by pre-commit, this extension only exists in [identify](https://github.com/pre-commit/identify) >= `2.4.3`.
 If you are running an older version you either need a fresh pre-commit environment, or run `pip install --upgrade identify`.
 
-### Arduino Lint 
+### Arduino Lint
 
 Sample `.pre-commit-config.yaml`:
 
@@ -41,7 +47,7 @@ If you are running in an environment where putting this on path is difficult, yo
     rev: v0.2.0
     hooks:
     -   id: arduino-lint
-    -   args: ["--install-path","/opt/arduino/"] 
+    -   args: ["--install-dir","/opt/arduino/"]
 ```
 
 ---
@@ -56,4 +62,4 @@ I just do this stuff for fun in my spare time, but feel free to:
 
 ## License
 
-The source of this repo uses the MIT open-source license, for details on the current licensing see [LICENSE](LICENSE.md) or click the badge above.
+The source of this repo uses the MIT open-source license, for details on the current licensing see [LICENSE](https://github.com/CreatingNull/Pre-Commit-Arduino/blob/master/LICENSE.md) or click the badge above.
