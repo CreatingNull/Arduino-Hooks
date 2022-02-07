@@ -47,7 +47,7 @@ If you are running in an environment where putting this on path is difficult, yo
     rev: v0.2.0
     hooks:
     -   id: arduino-lint
-    -   args: ["--install-dir","/opt/arduino/"]
+    -   args: ["--install-dir=/opt/arduino/"]
 ```
 
 ---
