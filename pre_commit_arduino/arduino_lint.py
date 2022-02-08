@@ -20,10 +20,11 @@ class ArduinoLint(StaticAnalyzerCmd):
     def __init__(self, args: List[str]):
         parser = ArgumentParser()
         parser.add_argument("--fail-on-warn", action="store_true")
+        # arduino lint uses the project dir rather than filenames.
+        parser.add_argument("--project-dir", type=Path, default=Path.cwd().resolve())
         hook_args, cli_args = parser.parse_known_args(args)
         self.fail_on_warn = hook_args.fail_on_warn
-        # arduino lint uses the project dir rather than filenames.
-        cli_args.append(Path.cwd().resolve().__str__())
+        cli_args.append(hook_args.project_dir.__str__())
         super().__init__(
             self.command,
             cli_args,

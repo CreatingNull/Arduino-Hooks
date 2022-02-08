@@ -40,14 +40,24 @@ To use the arduino lint hook you must already have the `arduino-lint` executable
 You can find instructions on how to install this and pre-compiled binaries in the [offical docs](https://arduino.github.io/arduino-lint/latest/installation/).
 
 To test you have this installed correctly on your system, run `arduino-lint --help` in your shell and verify this returns the help information.
-If you are running in an environment where putting this on path is difficult, you may pass an `--install-path` argument to define the absolute path to the arduino-lint executable.
+If you are running in an environment where putting this on path is difficult, you may pass an `--install-dir` argument to define the absolute path to the arduino-lint executable.
+
+For convenience this hook recognises the following arguments:
+
+ * `--fail-on-warn` flag that will fail on any warning returned by arduino lint.
+   Similar result to `compliance=strict` but even stricter.
+ * `--project-dir` if your project doesn't exist at the root directory and you don't want to waste time with `--recurse=true`.
+
+Due to limitations in `pre-commit-pycli` it is **highly** suggested that you pass all arguments with values using `--key=value` rather than `--key value`.
+
+You also may pass in supported `arduino-cli` [arguments](https://arduino.github.io/arduino-lint/latest/commands/arduino-lint/) which will be handed through to the executable.
 
 ```yaml
 -   repo: https://github.com/creatingnull/pre-commit-arduino
     rev: v0.2.0
     hooks:
     -   id: arduino-lint
-    -   args: ["--install-dir=/opt/arduino/"]
+    -   args: ["--install-dir=/opt/arduino/", "--fail-on-warn", "--project-dir=src/"]
 ```
 
 ---
