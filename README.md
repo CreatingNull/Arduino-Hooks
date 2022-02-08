@@ -31,13 +31,13 @@ Sample `.pre-commit-config.yaml`:
 
 ```yaml
 -   repo: https://github.com/creatingnull/pre-commit-arduino
-    rev: v0.2.0
+    rev: v0.1.0
     hooks:
     -   id: arduino-lint
 ```
 
 To use the arduino lint hook you must already have the `arduino-lint` executable installed and **on path**.
-You can find instructions on how to install this and pre-compiled binaries in the [offical docs](https://arduino.github.io/arduino-lint/latest/installation/).
+You can find instructions on how to install this and pre-compiled binaries in the [official docs](https://arduino.github.io/arduino-lint/latest/installation/).
 
 To test you have this installed correctly on your system, run `arduino-lint --help` in your shell and verify this returns the help information.
 If you are running in an environment where putting this on path is difficult, you may pass an `--install-dir` argument to define the absolute path to the arduino-lint executable.
@@ -54,7 +54,7 @@ You also may pass in supported `arduino-cli` [arguments](https://arduino.github.
 
 ```yaml
 -   repo: https://github.com/creatingnull/pre-commit-arduino
-    rev: v0.2.0
+    rev: v0.1.0
     hooks:
     -   id: arduino-lint
     -   args: ["--install-dir=/opt/arduino/", "--fail-on-warn", "--project-dir=src/"]
