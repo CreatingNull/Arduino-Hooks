@@ -48,9 +48,9 @@ jobs:
         run: |
           curl -fsSL https://raw.githubusercontent.com/arduino/arduino-lint/main/etc/install.sh | sh -s 1.2.0
           if ["$RUNNER_OS" == "Windows" ]; then
-            echo "${PWD}/bin/" >> $GITHUB_PATH
-          else
             echo "${PWD}/bin/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8
+          else
+            echo "${PWD}/bin/" >> $GITHUB_PATH
           fi
 
       - name: Run tests
