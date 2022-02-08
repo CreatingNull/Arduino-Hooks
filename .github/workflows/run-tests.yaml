@@ -46,6 +46,7 @@ jobs:
       - name: Setup Arduino Lint
         run: |
           curl -fsSL https://raw.githubusercontent.com/arduino/arduino-lint/main/etc/install.sh | sh -s 1.2.0
+          echo "ARDUINO_LINT_PATH=${PWD}/bin/" >> $GITHUB_ENV
 
       - name: Run tests
         run: |
