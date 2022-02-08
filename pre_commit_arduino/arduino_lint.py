@@ -34,7 +34,7 @@ class ArduinoLint(StaticAnalyzerCmd):
     def run(self):
         """Run arduino-lint."""
         self.run_command()
-        if self.fail_on_warn and " 0 WARNINGS" not in str(self.stdout):
+        if self.fail_on_warn and "no errors or warnings" not in str(self.stdout):
             print(str(self.stdout, encoding="UTF-8"))
             self.raise_error(
                 "Failed due to arduino-lint warnings.",

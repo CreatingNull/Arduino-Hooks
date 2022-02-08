@@ -7,7 +7,6 @@
 [![License](https://img.shields.io/github/license/CreatingNull/pre-commit-arduino?style=flat-square)](https://github.com/CreatingNull/Pre-Commit-Arduino/blob/master/LICENSE.md)
 [![Code Style](https://img.shields.io/badge/style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
 
-
 This project provides [pre-commit](https://github.com/pre-commit/pre-commit) hooks for [arduino](https://github.com/arduino) command line tooling.
 
 Currently, this includes:
