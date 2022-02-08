@@ -1,9 +1,9 @@
 # ![NullTek Documentation](https://raw.githubusercontent.com/CreatingNull/NullTek-Assets/main/img/logo/NullTekDocumentationLogo.png) Pre-Commit Arduino Hooks
 
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pre-commit-arduino?style=flat-square&logo=python&logoColor=white)](https://pypi.org/project/pre-commit-arduino/)
-[![PyPI](https://img.shields.io/pypi/v/pre-commit-arduino?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/pre-commit-arduino/)
-[![Tests](https://img.shields.io/github/workflow/status/CreatingNull/pre-commit-arduino/pre-commit?logo=pre-commit&style=flat-square&label=format)](https://github.com/CreatingNull/pre-commit-arduino/actions/workflows/run-pre-commit.yaml)
-[![Format](https://img.shields.io/github/workflow/status/CreatingNull/pre-commit-arduino/tests?logo=GitHub&style=flat-square&label=tests)](https://github.com/CreatingNull/pre-commit-arduino/actions/workflows/run-tests.yaml)
+[![PyPI - Release Version](https://img.shields.io/pypi/v/pre-commit-arduino?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/pre-commit-arduino/)
+[![Format](https://img.shields.io/github/workflow/status/CreatingNull/pre-commit-arduino/pre-commit?logo=pre-commit&style=flat-square&label=format)](https://github.com/CreatingNull/pre-commit-arduino/actions/workflows/run-pre-commit.yaml)
+[![Tests](https://img.shields.io/github/workflow/status/CreatingNull/pre-commit-arduino/tests?logo=GitHub&style=flat-square&label=tests)](https://github.com/CreatingNull/pre-commit-arduino/actions/workflows/run-tests.yaml)
 [![License](https://img.shields.io/github/license/CreatingNull/pre-commit-arduino?style=flat-square)](https://github.com/CreatingNull/Pre-Commit-Arduino/blob/master/LICENSE.md)
 [![Code Style](https://img.shields.io/badge/style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
 
