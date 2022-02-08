@@ -44,6 +44,7 @@ jobs:
           python -m pip install -r requirements.txt
 
       - name: Setup Arduino Lint
+        shell: bash
         run: |
           curl -fsSL https://raw.githubusercontent.com/arduino/arduino-lint/main/etc/install.sh | sh -s 1.2.0
           echo "${PWD}/bin/" >> $GITHUB_PATH
