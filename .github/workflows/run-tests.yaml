@@ -41,6 +41,7 @@ jobs:
       - name: Install depenencies
         run: |
           python -m pip install --upgrade pip setuptools wheel pytest coverage
+          python -m pip install -r requirements.txt
 
       - name: Setup Arduino Lint
         uses: arduino/arduino-lint-action@v1
