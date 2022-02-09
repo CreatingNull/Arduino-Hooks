@@ -1,6 +1,6 @@
 import pytest
 
-from pre_commit_arduino.arduino_lint import ArduinoLint
+from arduino_hooks.arduino_lint import ArduinoLint
 
 
 @pytest.fixture(scope="function")

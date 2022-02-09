@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from pre_commit_arduino.arduino_lint import ArduinoLint
+from arduino_hooks.arduino_lint import ArduinoLint
 
 
 def test_lint_constructor(arduino_lint: ArduinoLint):
