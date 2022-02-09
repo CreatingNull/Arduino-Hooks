@@ -1,1 +1,1 @@
-pre-commit-pycli==0.2.4
+clipy-hooks==0.1.0

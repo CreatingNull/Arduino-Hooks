@@ -8,7 +8,7 @@ from argparse import ArgumentParser
 from pathlib import Path
 from typing import List
 
-from pre_commit_pycli.cli import StaticAnalyzerCmd
+from clipy_hooks.cli import StaticAnalyzerCmd
 
 
 class ArduinoLint(StaticAnalyzerCmd):
@@ -28,7 +28,7 @@ class ArduinoLint(StaticAnalyzerCmd):
         super().__init__(
             self.command,
             cli_args,
-            help_url="https://github.com/CreatingNull/Pre-Commit-Arduino",
+            help_url="https://github.com/CreatingNull/arduino-hooks",
         )
 
     def run(self):

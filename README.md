@@ -1,36 +1,34 @@
-# ![NullTek Documentation](https://raw.githubusercontent.com/CreatingNull/NullTek-Assets/main/img/logo/NullTekDocumentationLogo.png) Pre-Commit Arduino Hooks
+# ![NullTek Documentation](https://raw.githubusercontent.com/CreatingNull/NullTek-Assets/main/img/logo/NullTekDocumentationLogo.png) Arduino Hooks
 
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pre-commit-arduino?style=flat-square&logo=python&logoColor=white)](https://pypi.org/project/pre-commit-arduino/)
-[![PyPI - Release Version](https://img.shields.io/pypi/v/pre-commit-arduino?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/pre-commit-arduino/)
-[![Format](https://img.shields.io/github/workflow/status/CreatingNull/pre-commit-arduino/pre-commit?logo=pre-commit&style=flat-square&label=format)](https://github.com/CreatingNull/pre-commit-arduino/actions/workflows/run-pre-commit.yaml)
-[![Tests](https://img.shields.io/github/workflow/status/CreatingNull/pre-commit-arduino/tests?logo=GitHub&style=flat-square&label=tests)](https://github.com/CreatingNull/pre-commit-arduino/actions/workflows/run-tests.yaml)
-[![License](https://img.shields.io/github/license/CreatingNull/pre-commit-arduino?style=flat-square)](https://github.com/CreatingNull/Pre-Commit-Arduino/blob/master/LICENSE.md)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/arduino-hooks?style=flat-square&logo=python&logoColor=white)](https://pypi.org/project/arduino-hooks/)
+[![PyPI - Release Version](https://img.shields.io/pypi/v/arduino-hooks?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/arduino-hooks/)
+[![Format](https://img.shields.io/github/workflow/status/CreatingNull/arduino-hooks/pre-commit?logo=pre-commit&style=flat-square&label=format)](https://github.com/CreatingNull/arduino-hooks/actions/workflows/run-pre-commit.yaml)
+[![Tests](https://img.shields.io/github/workflow/status/CreatingNull/arduino-hooks/tests?logo=GitHub&style=flat-square&label=tests)](https://github.com/CreatingNull/arduino-hooks/actions/workflows/run-tests.yaml)
+[![License](https://img.shields.io/github/license/CreatingNull/arduino-hooks?style=flat-square)](https://github.com/CreatingNull/arduino-hooks/blob/master/LICENSE.md)
 [![Code Style](https://img.shields.io/badge/style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
 
 This project provides [pre-commit](https://github.com/pre-commit/pre-commit) hooks for [arduino](https://github.com/arduino) command line tooling.
+This is an un-official project.
 
 Currently, this includes:
 
 * [arduino-lint](https://github.com/arduino/arduino-lint) - Linter for checking arduino projects for problems and conformance to conventions.
 
-This project uses [pre-commit-pycli](https://github.com/CreatingNull/Pre-Commit-PyCLI), to handle most of the cross-platform, sub-process nastiness.
+This project uses [CliPy-Hooks](https://github.com/CreatingNull/clipy-hooks), to handle most of the cross-platform, sub-process nastiness.
 
 ---
 
 ## Getting Started
 
-To configure pre-commit see [pre-commit](https://github.com/pre-commit/pre-commit) for instructions
-
-This project requires the `.ino` extension is comprehended by pre-commit, this extension only exists in [identify](https://github.com/pre-commit/identify) >= `2.4.3`.
-If you are running an older version you either need a fresh pre-commit environment, or run `pip install --upgrade identify`.
+To configure pre-commit see [pre-commit](https://pre-commit.com/) for instructions.
 
 ### Arduino Lint
 
 Sample `.pre-commit-config.yaml`:
 
 ```yaml
--   repo: https://github.com/creatingnull/pre-commit-arduino
-    rev: v0.1.1
+-   repo: https://github.com/creatingnull/arduino-hooks
+    rev: v0.1.0
     hooks:
     -   id: arduino-lint
 ```
@@ -47,13 +45,13 @@ For convenience this hook recognises the following arguments:
    Similar result to `compliance=strict` but even stricter.
  * `--project-dir` if your project doesn't exist at the root directory and you don't want to waste time with `--recurse=true`.
 
-Due to limitations in `pre-commit-pycli` it is **highly** suggested that you pass all arguments with values using `--key=value` rather than `--key value`.
+Due to limitations in `clipy-hooks` it is **highly** suggested that you pass all arguments with values using `--key=value` rather than `--key value`.
 
 You also may pass in supported `arduino-cli` [arguments](https://arduino.github.io/arduino-lint/latest/commands/arduino-lint/) which will be handed through to the executable.
 
 ```yaml
--   repo: https://github.com/creatingnull/pre-commit-arduino
-    rev: v0.1.1
+-   repo: https://github.com/creatingnull/arduino-hooks
+    rev: v0.1.0
     hooks:
     -   id: arduino-lint
     -   args: ["--install-dir=/opt/arduino/", "--fail-on-warn", "--project-dir=src/"]
@@ -71,4 +69,4 @@ I just do this stuff for fun in my spare time, but feel free to:
 
 ## License
 
-The source of this repo uses the MIT open-source license, for details on the current licensing see [LICENSE](https://github.com/CreatingNull/Pre-Commit-Arduino/blob/master/LICENSE.md) or click the badge above.
+The source of this repo uses the MIT open-source license, for details on the current licensing see [LICENSE](https://github.com/CreatingNull/arduino-hooks/blob/master/LICENSE.md) or click the badge above.
