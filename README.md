@@ -20,7 +20,7 @@ This project uses [CliPy-Hooks](https://github.com/CreatingNull/clipy-hooks), to
 
 ## Getting Started
 
-To configure pre-commit see [pre-commit](https://pre-commit.com/) for instructions.
+To configure pre-commit see [their official docs](https://pre-commit.com/) for instructions.
 
 ### Arduino Lint
 
