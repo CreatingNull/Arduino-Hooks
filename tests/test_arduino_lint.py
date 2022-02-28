@@ -35,6 +35,7 @@ def test_lint_no_project_fails(arduino_lint: ArduinoLint):
 def test_project_dir_arg():
     """Checks passing a project directory argument to the hook works."""
     arduino_lint = ArduinoLint(["arduino-lint", "--project-dir=ValidSketch/"])
+    assert len(arduino_lint.args) == 0
     assert arduino_lint.run() is None
 
 
