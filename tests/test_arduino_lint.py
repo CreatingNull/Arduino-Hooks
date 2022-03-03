@@ -43,7 +43,6 @@ def test_fail_on_warn_arg():
     """Checks failing on all warning flag works."""
     arduino_lint = ArduinoLint(["arduino-lint", "--fail-on-warn"])
     arduino_lint.paths[0] = Path("WarningSketch/").resolve().__str__()
-    print(arduino_lint.fail_on_warn)
     with pytest.raises(SystemExit):
         arduino_lint.run()
     # Sanity check doesn't fail when flag is disabled
