@@ -46,13 +46,15 @@ jobs:
 
       - name: Setup Arduino Lint
         shell: bash
-        run: |
-          curl -fsSL https://raw.githubusercontent.com/arduino/arduino-lint/main/etc/install.sh | sh -s 1.2.0
-          if ["$RUNNER_OS" == "Windows" ]; then
-            echo "${PWD}/bin/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8
-          else
-            echo "${PWD}/bin/" >> $GITHUB_PATH
-          fi
+        run: curl -fsSL https://raw.githubusercontent.com/arduino/arduino-lint/main/etc/install.sh | sh -s 1.2.0
+
+      - name: Setup Arduino CLI
+        shell: bash
+        run: curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh -s 0.21.1
+
+      - name: Put tools on path
+        shell: bash
+        run: echo "${PWD}/bin/" >> $GITHUB_PATH
 
       - name: Run tests
         run: |
