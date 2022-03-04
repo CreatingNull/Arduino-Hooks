@@ -10,5 +10,5 @@
   name: Arduino CLI
   description: Verifies arduino projects can be compiled.
   entry: arduino-cli-hook
-  langugage: python
+  language: python
   pass_filenames: false
