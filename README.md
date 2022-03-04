@@ -13,6 +13,7 @@ This is an un-official project.
 Currently, this includes:
 
 * [arduino-lint](https://github.com/arduino/arduino-lint) - Linter for checking arduino projects for problems and conformance to conventions.
+* [arduino-cli](https://github.com/arduino/arduino-cli) - Limited to `compile` calls for verifying arduino code can be compiled.
 
 This project uses [CliPy-Hooks](https://github.com/CreatingNull/clipy-hooks), to handle most of the cross-platform, sub-process nastiness.
 
@@ -22,40 +23,59 @@ This project uses [CliPy-Hooks](https://github.com/CreatingNull/clipy-hooks), to
 
 To configure pre-commit see [their official docs](https://pre-commit.com/) for instructions.
 
+To use any of the arduino hooks below you must have the respective executables installed and **on path**.
+If you are running in an environment where putting this on path is difficult, you may pass an `--install-dir` argument to define the absolute path to the arduino-lint executable.
+
+The hooked tools do not work with individual source files as is done with most pre-commit hooks, as these tools work against complete arduino projects.
+By default, the hooks will treat the root directory as the project root, as is typical in arduino repositories.
+In cases where this is not true, you can pass a `--project-dir` argument with the project root path to the hook.
+
+Due to limitations in `clipy-hooks` it is **highly** suggested that you pass all arguments with values using `--key=value` rather than `--key value`.
+
 ### Arduino Lint
 
 Sample `.pre-commit-config.yaml`:
 
 ```yaml
 -   repo: https://github.com/creatingnull/arduino-hooks
-    rev: v0.1.0
+    rev: v0.2.0
     hooks:
     -   id: arduino-lint
 ```
 
-To use the arduino lint hook you must already have the `arduino-lint` executable installed and **on path**.
-You can find instructions on how to install this and pre-compiled binaries in the [official docs](https://arduino.github.io/arduino-lint/latest/installation/).
-
-To test you have this installed correctly on your system, run `arduino-lint --help` in your shell and verify this returns the help information.
-If you are running in an environment where putting this on path is difficult, you may pass an `--install-dir` argument to define the absolute path to the arduino-lint executable.
+You can find instructions on how to install `arduino-lint` and pre-compiled binaries in the [official docs](https://arduino.github.io/arduino-lint/latest/installation/).
 
 For convenience this hook recognises the following arguments:
 
  * `--fail-on-warn` flag that will fail on any warning returned by arduino lint.
    Similar result to `compliance=strict` but even stricter.
- * `--project-dir` if your project doesn't exist at the root directory and you don't want to waste time with `--recurse=true`.
-
-Due to limitations in `clipy-hooks` it is **highly** suggested that you pass all arguments with values using `--key=value` rather than `--key value`.
 
 You also may pass in supported `arduino-cli` [arguments](https://arduino.github.io/arduino-lint/latest/commands/arduino-lint/) which will be handed through to the executable.
 
 ```yaml
 -   repo: https://github.com/creatingnull/arduino-hooks
-    rev: v0.1.0
+    rev: v0.2.0
     hooks:
     -   id: arduino-lint
     -   args: ["--install-dir=/opt/arduino/", "--fail-on-warn", "--project-dir=src/"]
 ```
+
+### Arduino CLI
+
+Must provide the full qualified board name for the target microcontroller.
+You'll also need to have previously installed the [core](https://arduino.github.io/arduino-cli/latest/getting-started/#install-the-core-for-your-board) for this target and any [libs](https://arduino.github.io/arduino-cli/latest/getting-started/#add-libraries) required by your project.
+
+Sample `.pre-commit-config.yaml`:
+
+```yaml
+-   repo: https://github.com/creatingnull/arduino-hooks
+    rev: v0.2.0
+    hooks:
+    -   id: arduino-cli
+        args: ["--fqbn=arduino:avr:nano"]
+```
+
+You can find instructions on how to install `arduino-cli` and pre-compiled binaries in the [official docs](https://arduino.github.io/arduino-cli/latest/installation/)
 
 ---
 

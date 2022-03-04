@@ -6,3 +6,9 @@
   entry: arduino-lint-hook
   language: python
   pass_filenames: false
+- id: arduino-cli
+  name: Arduino CLI
+  description: Verifies arduino projects can be compiled.
+  entry: arduino-cli-hook
+  langugage: python
+  pass_filenames: false
