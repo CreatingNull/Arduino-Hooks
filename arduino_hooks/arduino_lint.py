@@ -43,6 +43,7 @@ class ArduinoLint(StaticAnalyzerCmd):
 
 
 def main(argv=None):
+    """Execute arduino_lint module when called as a script."""
     cmd = ArduinoLint(sys.argv if argv is None else argv)
     cmd.run()
 

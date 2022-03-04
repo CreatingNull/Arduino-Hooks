@@ -42,6 +42,7 @@ class ArduinoCLI(StaticAnalyzerCmd):
 
 
 def main(argv=None):
+    """Execute arduino_cli module when called as a script."""
     cmd = ArduinoCLI(sys.argv if argv is None else argv)
     cmd.run()
 
