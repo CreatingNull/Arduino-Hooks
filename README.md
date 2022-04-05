@@ -92,7 +92,7 @@ See the following example step added to a `ubuntu-latest` pre-commit workflow:
     curl -fsSL https://raw.githubusercontent.com/arduino/arduino-lint/main/etc/install.sh | sh
     curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
     bin/arduino-cli core install arduino:avr
-    bin/arduino-cli install NullPacketComms
+    bin/arduino-cli lib install NullPacketComms
     echo "${PWD}/bin/" >> $GITHUB_PATH
 ```
 
