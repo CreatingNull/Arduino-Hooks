@@ -30,7 +30,7 @@ The hooked tools do not work with individual source files as is done with most p
 By default, the hooks will treat the root directory as the project root, as is typical in arduino repositories.
 In cases where this is not true, you can pass a `--project-dir` argument with the project root path to the hook.
 
-Due to limitations in `clipy-hooks` it is **highly** suggested that you pass all arguments with values using `--key=value` rather than `--key value`.
+Due to limitations in `argparse`, it is **highly** suggested that you pass all arguments with values using `--key=value` rather than `--key value`.
 
 ### Arduino Lint
 
