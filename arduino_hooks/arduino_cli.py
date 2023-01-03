@@ -10,6 +10,10 @@ from typing import List
 
 from clipy_hooks.cli import StaticAnalyzerCmd
 
+# Ignore duplication here as this is boilerplate for
+# instantiating the base class.
+# pylint: disable=R0801
+
 
 class ArduinoCLI(StaticAnalyzerCmd):
     """Class for calling the Arduino CLI tool."""
@@ -17,6 +21,7 @@ class ArduinoCLI(StaticAnalyzerCmd):
     command = "arduino-cli"
 
     def __init__(self, args: List[str]):
+        """Construct the ArduinoCLI Static Analyzer."""
         parser = ArgumentParser()
         # arduino lint uses the project dir rather than filenames.
         parser.add_argument("--project-dir", type=Path, default=Path.cwd().resolve())

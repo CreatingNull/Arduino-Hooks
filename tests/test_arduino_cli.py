@@ -23,6 +23,6 @@ def test_project_dir_arg():
 
 def test_syntax_error_fails(arduino_cli: ArduinoCLI):
     """Check uncompilable code throws errors correctly."""
-    arduino_cli.paths[0] = Path("WarningSketch/").resolve().__str__()
+    arduino_cli.paths[0] = str(Path("WarningSketch/").resolve())
     with pytest.raises(SystemExit):
         assert arduino_cli.run()

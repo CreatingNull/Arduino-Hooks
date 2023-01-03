@@ -1,6 +1,7 @@
 repos:
+
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0
+    rev: v4.4.0
     hooks:
     -   id: check-yaml
     -   id: end-of-file-fixer
@@ -12,22 +13,48 @@ repos:
     -   id: check-case-conflict
     -   id: check-ast
     -   id: requirements-txt-fixer
+
+# General Project code formatter.
 -   repo: https://github.com/psf/black
-    rev: 22.3.0
+    rev: 22.12.0
     hooks:
     -   id: black
--   repo: https://github.com/asottile/reorder_python_imports
-    rev: v3.0.1
+
+# Sorts python imports.
+-   repo: https://github.com/PyCQA/isort
+    # Note - on black update blacken-docs pin should also be updated.
+    rev: 5.11.4
     hooks:
-    -   id: reorder-python-imports
--   repo: https://github.com/myint/docformatter
-    rev: v1.4
+    -   id: isort
+        args: ['--profile=black']
+
+
+# Formats python docstrings.
+-   repo: https://github.com/PyCQA/docformatter
+    rev: v1.5.1
     hooks:
     -   id: docformatter
+
+# Used to detect unintentionally unused code.
+-   repo: https://github.com/asottile/dead
+    rev: v1.5.0
+    hooks:
+    -   id: dead
+        args: [
+            '--exclude=conf.py'  # Ignore the sphinx config as this is used by an external tool.
+        ]
+
+# Lint code in pre-commit env, note: This ignores import checks.
 -   repo: https://github.com/PyCQA/pylint
-    rev: v2.13.4
+    rev: v2.15.9
     hooks:
     -   id: pylint
+        args: [
+            '--disable=E0401',  # Ignore imports when not running in a local env.
+            '--disable=R0903',  # Class are built on interfaces so too few methods isn't important.
+        ]
+
+    # Lint code for security flaws.
 -   repo: https://github.com/PyCQA/bandit
     rev: 1.7.4
     hooks:
@@ -36,3 +63,19 @@ repos:
           --skip, "B101"
           # B101 Assert is used exclusively for tests.
        ]
+
+# Lint docstrings.
+-   repo: https://github.com/PyCQA/pydocstyle
+    # Waiting for a 3.10 release on pypi
+    rev: "6.2.0"
+    hooks:
+    -   id: pydocstyle
+        additional_dependencies:
+            # TOML support only added natively in python 3.11
+            - toml
+
+# Static typehint linting.
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.991
+    hooks:
+    -   id: mypy

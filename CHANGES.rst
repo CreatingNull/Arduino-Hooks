@@ -1,0 +1,25 @@
+Version 0.2.1
+-------------
+
+:Date: 3-January-2022
+
+* Renamed changelog to ``CHANGES.rst`` to be more consistent with newer projects.
+* Shifting project to use ``isort`` in preference to ``reorder-python-imports``.
+  This is for consistency with newer projects and ease of use.
+* Adding dead code detection, static typing, and doc linting to pre-commit hooks.
+* Updating pre-commit hooks to latest.
+* Removing .pylintrc file as new versions of pylint don't really require this.
+
+Version 0.2.0
+-------------
+
+:Date: 5-March-2022
+
+* Adding ``arduino-cli`` compile support.
+
+Version 0.1.0
+-------------
+
+:Date: 9-February-2022
+
+* Initial release with ``arduino-lint`` support.
