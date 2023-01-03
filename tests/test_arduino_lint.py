@@ -1,4 +1,6 @@
 """Module for checking the functionality of the arduino-lint hook."""
+import contextlib
+import os
 from pathlib import Path
 
 import pytest
@@ -24,8 +26,11 @@ def test_fail_on_warn_arg():
     """Checks failing on all warning flag works."""
     arduino_lint = ArduinoLint(["arduino-lint", "--fail-on-warn"])
     arduino_lint.paths[0] = str(Path("WarningSketch/").resolve())
-    with pytest.raises(SystemExit):
-        arduino_lint.run()
+    # Suppress the CLI response, is confusing when viewing test results.
+    with contextlib.redirect_stderr(open(os.devnull, "w", encoding="utf-8")):
+        with contextlib.redirect_stdout(open(os.devnull, "w", encoding="utf-8")):
+            with pytest.raises(SystemExit):
+                arduino_lint.run()
     # Sanity check doesn't fail when flag is disabled
     arduino_lint.fail_on_warn = False
     assert arduino_lint.run() is None

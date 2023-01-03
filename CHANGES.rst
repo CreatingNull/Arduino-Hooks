@@ -12,6 +12,8 @@ Version 0.3.0
 * Adding dead code detection, static typing, and doc linting to pre-commit hooks.
 * Updating pre-commit hooks to latest.
 * Removing .pylintrc file as new versions of pylint don't really require this.
+* Suppressed output from CLI tools during tests when the test intentionally triggers errors.
+  This was producing confusing results where it look as though tests were silently failing.
 
 Version 0.2.0
 -------------
