@@ -3,6 +3,7 @@ Version 0.2.1
 
 :Date: 3-January-2022
 
+* Officially Supporting python 3.11.
 * Renamed changelog to ``CHANGES.rst`` to be more consistent with newer projects.
 * Shifting project to use ``isort`` in preference to ``reorder-python-imports``.
   This is for consistency with newer projects and ease of use.

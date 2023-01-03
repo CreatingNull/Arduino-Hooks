@@ -2,7 +2,7 @@ version: 2
 
 updates:
 
-  # Maintain the github actions.
+  # Maintain the GitHub actions.
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
