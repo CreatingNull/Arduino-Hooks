@@ -37,7 +37,7 @@ Sample `.pre-commit-config.yaml`:
 
 ```yaml
 -   repo: https://github.com/creatingnull/arduino-hooks
-    rev: v0.2.0
+    rev: v0.3.0
     hooks:
     -   id: arduino-lint
 ```
@@ -53,7 +53,7 @@ You also may pass in supported `arduino-cli` [arguments](https://arduino.github.
 
 ```yaml
 -   repo: https://github.com/creatingnull/arduino-hooks
-    rev: v0.2.0
+    rev: v0.3.0
     hooks:
     -   id: arduino-lint
     -   args: ["--install-dir=/opt/arduino/", "--fail-on-warn", "--project-dir=src/"]
@@ -66,7 +66,7 @@ Sample `.pre-commit-config.yaml`:
 
 ```yaml
 -   repo: https://github.com/creatingnull/arduino-hooks
-    rev: v0.2.0
+    rev: v0.3.0
     hooks:
     -   id: arduino-cli
         args: ["--fqbn=arduino:avr:nano"]
