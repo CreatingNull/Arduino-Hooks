@@ -1,9 +1,10 @@
-Version 0.2.1
+Version 0.3.0
 -------------
 
-:Date: 3-January-2022
+:Date: TBC
 
 * Officially Supporting python 3.11.
+* Fixing the GitHub workflow badges in the README.
 * Renamed changelog to ``CHANGES.rst`` to be more consistent with newer projects.
 * Shifting project to use ``isort`` in preference to ``reorder-python-imports``.
   This is for consistency with newer projects and ease of use.

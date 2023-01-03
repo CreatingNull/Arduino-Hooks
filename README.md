@@ -2,8 +2,8 @@
 
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/arduino-hooks?style=flat-square&logo=python&logoColor=white)](https://pypi.org/project/arduino-hooks/)
 [![PyPI - Release Version](https://img.shields.io/pypi/v/arduino-hooks?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/arduino-hooks/)
-[![Format](https://img.shields.io/github/workflow/status/CreatingNull/arduino-hooks/pre-commit?logo=pre-commit&style=flat-square&label=format)](https://github.com/CreatingNull/arduino-hooks/actions/workflows/run-pre-commit.yaml)
-[![Tests](https://img.shields.io/github/workflow/status/CreatingNull/arduino-hooks/tests?logo=GitHub&style=flat-square&label=tests)](https://github.com/CreatingNull/arduino-hooks/actions/workflows/run-tests.yaml)
+[![Format](https://img.shields.io/github/actions/workflow/status/CreatingNull/arduino-hooks/run-pre-commit.yaml?branch=main&logo=pre-commit&style=flat-square&label=format)](https://github.com/CreatingNull/arduino-hooks/actions/workflows/run-pre-commit.yaml)
+[![Tests](https://img.shields.io/github/actions/workflow/status/CreatingNull/arduino-hooks/run-tests.yaml?branch=main&logo=GitHub&style=flat-square&label=tests)](https://github.com/CreatingNull/arduino-hooks/actions/workflows/run-tests.yaml)
 [![License](https://img.shields.io/github/license/CreatingNull/arduino-hooks?style=flat-square)](https://github.com/CreatingNull/arduino-hooks/blob/master/LICENSE.md)
 [![Code Style](https://img.shields.io/badge/style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
 
