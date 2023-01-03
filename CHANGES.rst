@@ -5,6 +5,7 @@ Version 0.3.0
 
 * Officially Supporting python 3.11.
 * Fixing the GitHub workflow badges in the README.
+* Updating clipy-hooks from 0.1.1 to 0.2.0.
 * Renamed changelog to ``CHANGES.rst`` to be more consistent with newer projects.
 * Shifting project to use ``isort`` in preference to ``reorder-python-imports``.
   This is for consistency with newer projects and ease of use.

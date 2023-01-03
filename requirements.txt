@@ -1,1 +1,1 @@
-clipy-hooks==0.1.1
+clipy-hooks==0.2.0
