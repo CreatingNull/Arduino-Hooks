@@ -29,8 +29,9 @@ def test_fail_on_warn_arg():
     # Suppress the CLI response, is confusing when viewing test results.
     with contextlib.redirect_stderr(open(os.devnull, "w", encoding="utf-8")):
         with contextlib.redirect_stdout(open(os.devnull, "w", encoding="utf-8")):
-            with pytest.raises(SystemExit):
+            with pytest.raises(SystemExit) as exit_case:
                 arduino_lint.run()
+            assert exit_case.value.code > 0  # non-zero exit code.
     # Sanity check doesn't fail when flag is disabled
     arduino_lint.fail_on_warn = False
     assert arduino_lint.run() is None

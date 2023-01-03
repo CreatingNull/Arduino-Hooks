@@ -11,8 +11,9 @@ def test_invalid_sketch_errors(arduino_tool):
     arduino_tool.paths[0] = str(Path("InvalidSketch/").resolve())
     # Suppress the CLI response, is confusing when viewing test results.
     with contextlib.redirect_stderr(open(os.devnull, "w", encoding="utf-8")):
-        with pytest.raises(SystemExit):
+        with pytest.raises(SystemExit) as exit_case:
             arduino_tool.run()
+        assert exit_case.value.code > 0  # non-zero exit code.
 
 
 def test_cli_good_code(arduino_tool):
@@ -25,5 +26,6 @@ def test_lint_no_project_fails(arduino_tool):
     """Checks when a project can't be resolved non-zero exit."""
     # Suppress the CLI response, is confusing when viewing test results.
     with contextlib.redirect_stderr(open(os.devnull, "w", encoding="utf-8")):
-        with pytest.raises(SystemExit):
+        with pytest.raises(SystemExit) as exit_case:
             arduino_tool.run()
+        assert exit_case.value.code > 0  # non-zero exit code.

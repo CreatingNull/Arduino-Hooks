@@ -28,5 +28,6 @@ def test_syntax_error_fails(arduino_cli: ArduinoCLI):
     arduino_cli.paths[0] = str(Path("WarningSketch/").resolve())
     # Suppress the CLI response, is confusing when viewing test results.
     with contextlib.redirect_stderr(open(os.devnull, "w", encoding="utf-8")):
-        with pytest.raises(SystemExit):
+        with pytest.raises(SystemExit) as exit_case:
             assert arduino_cli.run()
+        assert exit_case.value.code > 0  # non-zero exit code.
