@@ -1,7 +1,7 @@
 Version 0.3.0
 -------------
 
-:Date: TBC
+:Date: 4-January-2022
 
 * Officially Supporting python 3.11.
 * Fixing the GitHub workflow badges in the README.
