@@ -40,19 +40,19 @@ jobs:
           python-version: ${{ matrix.python-version }}
           architecture: ${{ matrix.architecture }}
 
-      - name: Install depenencies
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip setuptools wheel pytest coverage
           python -m pip install -r requirements.txt
 
       - name: Setup Arduino Lint
         shell: bash
-        run: curl -fsSL https://raw.githubusercontent.com/arduino/arduino-lint/main/etc/install.sh | sh -s 1.2.0
+        run: curl -fsSL https://raw.githubusercontent.com/arduino/arduino-lint/main/etc/install.sh | sh -s 1.2.1
 
       - name: Setup Arduino CLI
         shell: bash
         run: |
-          curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh -s 0.21.1
+          curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh -s 0.29.0
           bin/arduino-cli core install arduino:avr
 
       - name: Put tools on path
