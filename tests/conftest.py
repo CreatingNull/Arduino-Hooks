@@ -1,4 +1,5 @@
 """Configuring pytest fixtures for use in the test suite."""
+
 import pytest
 from clipy_hooks.cli import Command
 

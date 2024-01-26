@@ -1,4 +1,5 @@
 """Tests the upstream sketch examples against applicable cli tools."""
+
 import contextlib
 import os
 from pathlib import Path

@@ -1,4 +1,5 @@
 """Module for checking the functionality of the arduino-cli hook."""
+
 import contextlib
 import os
 from pathlib import Path
