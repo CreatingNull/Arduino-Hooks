@@ -1,3 +1,11 @@
+Version 0.4.0
+-------------
+
+:Date: TBC
+
+* Officially Supporting python 3.12.
+* Clipy-Hooks updated to 0.2.1.
+
 Version 0.3.0
 -------------
 
