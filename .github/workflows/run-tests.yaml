@@ -53,7 +53,7 @@ jobs:
       - name: Setup Arduino CLI
         shell: bash
         run: |
-          curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh -s 0.29.0
+          curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh -s 0.35.2
           bin/arduino-cli core install arduino:avr
 
       - name: Put tools on path

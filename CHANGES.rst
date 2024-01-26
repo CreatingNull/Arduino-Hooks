@@ -5,6 +5,7 @@ Version 0.4.0
 
 * Officially Supporting python 3.12.
 * Clipy-Hooks updated to 0.2.1.
+* Arduino-CLI used tested in CI updated to 0.35.2.
 
 Version 0.3.0
 -------------
