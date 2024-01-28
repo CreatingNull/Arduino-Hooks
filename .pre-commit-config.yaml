@@ -1,4 +1,22 @@
+---
 repos:
+
+-   repo: https://github.com/executablebooks/mdformat
+    # Do this before other tools "fixing" the line endings
+    rev: 0.7.17
+    hooks:
+      - id: mdformat
+        name: Format Markdown
+        entry: mdformat # Executable to run, with fixed options
+        language: python
+        types: [markdown]
+        # args: [--wrap, "75", --number]
+        args: [--number]
+        additional_dependencies:
+          - mdformat-toc
+          - mdformat-config
+          - mdformat-gfm
+          - setuptools
 
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
@@ -12,7 +30,46 @@ repos:
     -   id: mixed-line-ending
     -   id: check-case-conflict
     -   id: check-ast
+    -   id: debug-statements
     -   id: requirements-txt-fixer
+    -   id: check-builtin-literals
+    -   id: check-merge-conflict
+    -   id: check-executables-have-shebangs
+    -   id: check-shebang-scripts-are-executable
+    -   id: no-commit-to-branch
+
+-   repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.32.0
+    hooks:
+    -   id: yamllint
+        args:
+          - --no-warnings
+          - -d
+          - "{extends: relaxed, rules: {line-length: {max: 90}}}"
+
+-   repo: https://github.com/fsouza/autoflake8
+    rev: v0.4.1
+    hooks:
+    -   id: autoflake8
+        args:
+          - -i
+          - -r
+          - --expand-star-imports
+          - .
+
+-   repo: https://github.com/PyCQA/flake8
+    rev: 6.1.0
+    hooks:
+    -   id: flake8
+        args: [--max-line-length=88]
+        additional_dependencies:
+          - pyproject-flake8>=0.0.1a2
+          - flake8-bugbear>=22.1.11
+          - flake8-comprehensions>=3.8.0
+          - flake8_2020>=1.6.1
+          - mccabe
+          - pycodestyle>=2.10.0
+          - pyflakes>=2.4.0
 
 # General Project code formatter.
 -   repo: https://github.com/psf/black
@@ -79,3 +136,8 @@ repos:
     rev: v1.8.0
     hooks:
     -   id: mypy
+
+-   repo: https://github.com/codespell-project/codespell
+    rev: v2.2.5
+    hooks:
+    -   id: codespell
