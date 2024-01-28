@@ -11,12 +11,12 @@ This is an un-official project.
 
 Currently, this includes:
 
-* [arduino-lint](https://github.com/arduino/arduino-lint) - Linter for checking arduino projects for problems and conformance to conventions.
-* [arduino-cli](https://github.com/arduino/arduino-cli) - Limited to `compile` calls for verifying arduino code can be compiled.
+- [arduino-lint](https://github.com/arduino/arduino-lint) - Linter for checking arduino projects for problems and conformance to conventions.
+- [arduino-cli](https://github.com/arduino/arduino-cli) - Limited to `compile` calls for verifying arduino code can be compiled.
 
 This project uses [CliPy-Hooks](https://github.com/CreatingNull/clipy-hooks), to handle most of the cross-platform, sub-process nastiness.
 
----
+______________________________________________________________________
 
 ## Getting Started
 
@@ -36,48 +36,47 @@ Due to limitations in `argparse`, it is **highly** suggested that you pass all a
 Sample `.pre-commit-config.yaml`:
 
 ```yaml
--   repo: https://github.com/creatingnull/arduino-hooks
+  - repo: https://github.com/creatingnull/arduino-hooks
     rev: v0.3.0
     hooks:
-    -   id: arduino-lint
+      - id: arduino-lint
 ```
 
 You can find instructions on how to install `arduino-lint` and pre-compiled binaries in the [official docs](https://arduino.github.io/arduino-lint/latest/installation/).
 
 For convenience this hook recognises the following arguments:
 
- * `--fail-on-warn` flag that will fail on any warning returned by arduino lint.
-   Similar result to `compliance=strict` but even stricter.
+- `--fail-on-warn` flag that will fail on any warning returned by arduino lint.
+  Similar result to `compliance=strict` but even stricter.
 
 You also may pass in supported `arduino-cli` [arguments](https://arduino.github.io/arduino-lint/latest/commands/arduino-lint/) which will be handed through to the executable.
 
 ```yaml
--   repo: https://github.com/creatingnull/arduino-hooks
+  - repo: https://github.com/creatingnull/arduino-hooks
     rev: v0.3.0
     hooks:
-    -   id: arduino-lint
-    -   args: ["--install-dir=/opt/arduino/", "--fail-on-warn", "--project-dir=src/"]
+      - id: arduino-lint
+      - args: [--install-dir=/opt/arduino/, --fail-on-warn, --project-dir=src/]
 ```
 
 ### Arduino CLI
 
-
 Sample `.pre-commit-config.yaml`:
 
 ```yaml
--   repo: https://github.com/creatingnull/arduino-hooks
+  - repo: https://github.com/creatingnull/arduino-hooks
     rev: v0.3.0
     hooks:
-    -   id: arduino-cli
-        args: ["--fqbn=arduino:avr:nano"]
+      - id: arduino-cli
+        args: [--fqbn=arduino:avr:nano]
 ```
-You can find instructions on how to install `arduino-cli` and pre-compiled binaries in the [official docs](https://arduino.github.io/arduino-cli/latest/installation/)
 
+You can find instructions on how to install `arduino-cli` and pre-compiled binaries in the [official docs](https://arduino.github.io/arduino-cli/latest/installation/)
 
 Must provide the full qualified board name for the target microcontroller, this parameter should be passed in `""` quotes due to yaml restrictions on `:` use.
 You'll also need to have previously installed the [core](https://arduino.github.io/arduino-cli/latest/getting-started/#install-the-core-for-your-board) for this target and any [libs](https://arduino.github.io/arduino-cli/latest/getting-started/#add-libraries) required by your project.
 
----
+______________________________________________________________________
 
 ## As a Github Action
 
@@ -86,13 +85,13 @@ You can add these hooks to your existing pre-commit workflow by adding a step to
 See the following example step added to a `ubuntu-latest` pre-commit workflow:
 
 ```yaml
-- name: Install Dependencies
-  run: |
-    curl -fsSL https://raw.githubusercontent.com/arduino/arduino-lint/main/etc/install.sh | sh
-    curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
-    bin/arduino-cli core install arduino:avr
-    bin/arduino-cli lib install NullPacketComms
-    echo "${PWD}/bin/" >> $GITHUB_PATH
+  - name: Install Dependancies
+    run: |
+      curl -fsSL https://raw.githubusercontent.com/arduino/arduino-lint/main/etc/install.sh | sh
+      curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
+      bin/arduino-cli core install arduino:avr
+      bin/arduino-cli lib install NullPacketComms
+      echo "${PWD}/bin/" >> $GITHUB_PATH
 ```
 
 The process followed is to:
@@ -105,7 +104,7 @@ The process followed is to:
 
 For more information you can check out [this project](https://github.com/CreatingNull/UOS-Arduino/blob/main/.github/workflows/run-pre-commit.yaml) implementing these hooks in a github workflow.
 
----
+______________________________________________________________________
 
 ## Donations
 
@@ -113,7 +112,7 @@ I just do this stuff for fun in my spare time, but feel free to:
 
 [![Support via buymeacoffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/nulltek)
 
----
+______________________________________________________________________
 
 ## License
 
