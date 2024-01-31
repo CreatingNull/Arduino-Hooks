@@ -1,5 +1,4 @@
-The MIT License (MIT)
-=====================
+# The MIT License (MIT)
 
 Copyright © `2022` [Nulltek](https://nulltek.xyz) `Steve Richardson (Creating Null)`
 
