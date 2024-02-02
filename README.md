@@ -85,7 +85,7 @@ You can add these hooks to your existing pre-commit workflow by adding a step to
 See the following example step added to a `ubuntu-latest` pre-commit workflow:
 
 ```yaml
-  - name: Install Dependancies
+  - name: Install Dependencies
     run: |
       curl -fsSL https://raw.githubusercontent.com/arduino/arduino-lint/main/etc/install.sh | sh
       curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
